@@ -1,3 +1,29 @@
+# ✅ Todo List com Atomic Design
+
+Este projeto é um exemplo de uma **Todo List** construída com React, usando:
+
+- `styled-components` para estilização com tema dark.
+- `Radix UI` para componentes acessíveis.
+- Arquitetura baseada em **Atomic Design**.
+- Persistência com `localStorage`.
+- Context API para estado global.
+
+---
+
+## 🚀 Como rodar o projeto
+
+### 1. Clone o repositório
+
+```bash
+git clone https://github.com/abqueiroz/Tode-list.git
+cd tode-list
+
+npm install
+
+npm run dev
+
+```
+
 # 🧪 Atomic Design
 
 **Atomic Design** é uma metodologia de design de interfaces proposta por Brad Frost, que organiza os componentes da interface de forma hierárquica e reutilizável, inspirada na estrutura dos elementos químicos.
