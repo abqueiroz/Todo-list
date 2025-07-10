@@ -3,7 +3,7 @@ import type { DefaultTheme } from "styled-components";
 export const theme: DefaultTheme = {
   colors: {
     primary: "#05b362",
-    primaryHover: "#00E676",
+    primaryHover: "#01783e",
     secondary: "#e4e4e7",
     border: "#404040",
     text: "#e4e4e7",
@@ -11,7 +11,7 @@ export const theme: DefaultTheme = {
     lightText: "#888888",
     progressBackground: "#e4e4e7",
     progressFill: "#00FF88",
-    backgorund:"#181818"
+    background:"#181818"
   },
   fonts: {
     heading: `'Inter', sans-serif`,

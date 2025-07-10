@@ -1,22 +1,27 @@
-import { CheckboxInput } from '../../atom'
+import { CheckboxInput, Typography } from '../../atom'
 import type { CheckboxInputProps } from '../../atom'
 
 import * as Styled from './Checkbox.styled'
 
-interface CheckboxProps extends Omit<CheckboxInputProps, 'id'> {
+export interface CheckboxProps extends Omit<CheckboxInputProps, 'id'> {
     $label: string
     id: string
 }
 
 export function Checkbox(props: CheckboxProps) {
-    const { $label, id, ...rest } = props
+    const { $label, id, checked, ...rest } = props
     return (
         <>
             <Styled.Container>
                 <CheckboxInput id={id} {...rest} />
-                <Styled.Label htmlFor={id} $as='label' id={`label-${id}`}>
+                <Typography htmlFor={id} $as='label' id={`label-${id}`}
+                    $color={checked ? 'lightText' : 'text'}
+                    style={{
+                        textDecoration: checked ? 'line-through' : 'none',
+                        userSelect: 'none'
+                    }}>
                     {$label}
-                </Styled.Label>
+                </Typography>
             </Styled.Container>
         </>)
 }

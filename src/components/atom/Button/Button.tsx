@@ -16,7 +16,7 @@ export const Button = styled.button<ButtonProps>`
   font-weight: 600;
   border-radius: ${({ theme }) => theme.radii.base};
   cursor: pointer;
-  transition: background-color 0.4s ease, outline-offset 100ms linear;
+  transition: background-color 0.4s ease;
 
   &:focus{
     outline:1px solid;
@@ -40,9 +40,9 @@ export const Button = styled.button<ButtonProps>`
 
       case 'tertiary':
         return css`
-          color: ${theme.colors.backgorund};
+          color: ${theme.colors.background};
           background-color: ${theme.colors.secondary};
-          border: 1px solid ${theme.colors.backgorund};
+          border: 1px solid ${theme.colors.background};
 
           &:hover {
             text-decoration: underline;

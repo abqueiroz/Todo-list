@@ -13,7 +13,7 @@ declare module "styled-components" {
       progressBackground: string;
       progressFill: string;
       secondary: string;
-      backgorund: string;
+      background: string;
     };
     fonts: {
       heading: string;

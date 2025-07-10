@@ -16,8 +16,8 @@ const ripple = keyframes`
 export const Checkbox = styled(CheckBoxRoot)`
   all: unset;
   position: relative;
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   border: 2px solid ${({ theme }) => theme.colors.border};
   border-radius: ${({ theme }) => theme.radii.base};
   cursor: pointer;
@@ -34,7 +34,6 @@ export const Checkbox = styled(CheckBoxRoot)`
     outline-offset: 1px;
     border-color: ${({ theme }) => theme.colors.primary};
     box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.primaryHover}40;
-      transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
 
   }
 
