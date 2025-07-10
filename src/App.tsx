@@ -6,7 +6,6 @@ import { useTodos } from './context/Todo';
 import { MainPageTemplate } from './components/template/MainPageTemplate';
 import * as Styled from './App.styled'
 
-
 export default function App() {
   const { todos, addTodo } = useTodos();
   const [inputValue, setInputValue] = useState('');

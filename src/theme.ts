@@ -11,7 +11,8 @@ export const theme: DefaultTheme = {
     lightText: "#888888",
     progressBackground: "#e4e4e7",
     progressFill: "#00FF88",
-    background:"#181818"
+    background:"#181818",
+    alert:"#ff8383"
   },
   fonts: {
     heading: `'Inter', sans-serif`,

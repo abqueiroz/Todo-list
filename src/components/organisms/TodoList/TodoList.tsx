@@ -46,7 +46,7 @@ export function TodoList(props: Omit<CheckboxProps, '$label' | 'id' | 'onChange'
                                 autoFocus
                             />
                             <Styled.ButtonsContainer>
-                                <Button $variant='secondary' onClick={() => saveEdit()}>
+                                <Button onClick={() => saveEdit()}>
                                     Save
                                 </Button>
                                 <Button $variant='secondary' onClick={() => setEditingId(null)}>
@@ -68,7 +68,7 @@ export function TodoList(props: Omit<CheckboxProps, '$label' | 'id' | 'onChange'
                                 <Button $variant='tertiary' onClick={() => startEditing(todo.id, todo.text)}>
                                     Edit
                                 </Button>
-                                <Button $variant='secondary' onClick={() => deleteTodo(todo.id)}>
+                                <Button $variant='alert' onClick={() => deleteTodo(todo.id)}>
                                     Delete
                                 </Button>
                             </Styled.ButtonsContainer>

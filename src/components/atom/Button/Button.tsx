@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-type Variant = 'primary' | 'secondary' | 'tertiary';
+type Variant = 'primary' | 'secondary' | 'tertiary' | 'alert';
 
 interface ButtonProps {
   $variant?: Variant;
@@ -11,8 +11,8 @@ export const Button = styled.button<ButtonProps>`
   align-items: center;
   justify-content: center;
   padding: 0.5rem 1rem;
-  font-family: ${({ theme }) => theme.fonts.body};
-  font-size: ${({ theme }) => theme.fontSizes.body};
+  font-family: ${({ theme }) => theme.fonts.mono};
+  font-size: ${({ theme }) => theme.fontSizes.caption};
   font-weight: 600;
   border-radius: ${({ theme }) => theme.radii.base};
   cursor: pointer;
@@ -35,6 +35,16 @@ export const Button = styled.button<ButtonProps>`
 
           &:hover {
             background-color: ${theme.colors.primary}20;
+          }
+        `;
+        case 'alert':
+        return css`
+          color: ${theme.colors.alert};
+          background-color: transparent;
+          border: 1px solid ${theme.colors.alert};
+
+          &:hover {
+            background-color: ${theme.colors.alert}20;
           }
         `;
 

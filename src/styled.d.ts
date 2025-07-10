@@ -14,6 +14,7 @@ declare module "styled-components" {
       progressFill: string;
       secondary: string;
       background: string;
+      alert:string;
     };
     fonts: {
       heading: string;
