@@ -1,6 +1,14 @@
-// TextInput.tsx
 import styled from 'styled-components';
 
+/**
+ * Props available for the styled TextInput component.
+ * 
+ * @param [placeholder] - Placeholder text displayed when input is empty.
+ * @param [value] - The current value of the input.
+ * @param [onChange] - Callback fired when the input value changes.
+ * @param [disabled] - When true, disables the input.
+ * @param [...] - Inherits all other native input props.
+ */
 export const TextInput = styled.input`
   display: flex;
   height: 1.5rem;

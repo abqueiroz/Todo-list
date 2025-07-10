@@ -4,12 +4,17 @@ type Variant = 'primary' | 'secondary' | 'tertiary' | 'alert';
 
 type Size = 'small' | 'regular' | 'large'
 
-
 interface ButtonProps {
   $variant?: Variant;
   $size?: Size
 }
 
+/**
+ * Props available for the styled Button component.
+ * 
+ * @param [$variant] - Defines the visual style of the button.
+ * @param [$size] - Controls the button’s size and typography.
+ */
 export const Button = styled.button<ButtonProps>`
   display: inline-flex;
   align-items: center;

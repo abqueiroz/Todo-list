@@ -10,6 +10,16 @@ type TypographyProps<T extends ElementType> = {
   $isBold?: boolean
 } & ComponentPropsWithoutRef<T>;
 
+/**
+ * Props available for the Typography component.
+ * 
+ * @param [$as] - Defines which HTML element or component to render (e.g., 'p', 'span', 'h1').
+ * @param [$color] - Text color based on theme keys.
+ * @param [$size] - Font size based on theme size keys.
+ * @param [$isBold] - If true, applies bold font weight.
+ * @param [children] - Text or elements to render inside the component.
+ * @param [...] - Inherits all other native props from the selected element.
+ */
 export function Typography<T extends ElementType = 'p'>({
   $as,
   $color,
