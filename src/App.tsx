@@ -8,8 +8,7 @@ import { useTodos } from './context/Todo';
 const Container = styled.div`
   background: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.text};
-  min-height: 80vh;
-  max-height: 100vh;
+  height: 80vh;
   padding: 2rem;
   font-family: ${({ theme }) => theme.fonts.body};
 `;

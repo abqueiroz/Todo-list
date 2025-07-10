@@ -40,9 +40,9 @@ export const Button = styled.button<ButtonProps>`
 
       case 'tertiary':
         return css`
-          color: ${theme.colors.background};
-          background-color: ${theme.colors.secondary};
-          border: 1px solid ${theme.colors.background};
+          color: ${theme.colors.text};
+          background-color: ${theme.colors.background};
+          border: 1px solid ${theme.colors.text };
 
           &:hover {
             text-decoration: underline;
