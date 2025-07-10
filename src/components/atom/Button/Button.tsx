@@ -2,8 +2,12 @@ import styled, { css } from 'styled-components';
 
 type Variant = 'primary' | 'secondary' | 'tertiary' | 'alert';
 
+type Size = 'small' | 'regular' | 'large'
+
+
 interface ButtonProps {
   $variant?: Variant;
+  $size?: Size
 }
 
 export const Button = styled.button<ButtonProps>`
@@ -11,8 +15,8 @@ export const Button = styled.button<ButtonProps>`
   align-items: center;
   justify-content: center;
   padding: 0.5rem 1rem;
-  font-family: ${({ theme }) => theme.fonts.mono};
-  font-size: ${({ theme }) => theme.fontSizes.caption};
+  font-family: ${({ theme }) => theme.fonts.body};
+  font-size: ${({ theme }) => theme.fontSizes.body};
   font-weight: 600;
   border-radius: ${({ theme }) => theme.radii.base};
   cursor: pointer;
@@ -24,6 +28,26 @@ export const Button = styled.button<ButtonProps>`
     outline-offset: 1px;
   }
 
+
+   ${({ theme, $size = 'regular' }) => {
+    switch ($size) {
+      case 'large':
+        return css`
+          font-family: ${theme.fonts.heading};
+          font-size: ${theme.fontSizes.heading};   
+        `;
+
+      case 'small':
+        return css`
+          font-family: ${theme.fonts.mono};
+          font-size: ${theme.fontSizes.caption};
+        `;
+
+      case 'regular':
+      default:
+        return;
+    }
+  }}
 
   ${({ theme, $variant = 'primary' }) => {
     switch ($variant) {
@@ -37,7 +61,7 @@ export const Button = styled.button<ButtonProps>`
             background-color: ${theme.colors.primary}20;
           }
         `;
-        case 'alert':
+      case 'alert':
         return css`
           color: ${theme.colors.alert};
           background-color: transparent;
@@ -52,7 +76,7 @@ export const Button = styled.button<ButtonProps>`
         return css`
           color: ${theme.colors.text};
           background-color: ${theme.colors.background};
-          border: 1px solid ${theme.colors.text };
+          border: 1px solid ${theme.colors.text};
 
           &:hover {
             text-decoration: underline;
