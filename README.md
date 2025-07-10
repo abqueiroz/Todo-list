@@ -1,69 +1,44 @@
-# React + TypeScript + Vite
+# 🧪 Atomic Design
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Atomic Design** é uma metodologia de design de interfaces proposta por Brad Frost, que organiza os componentes da interface de forma hierárquica e reutilizável, inspirada na estrutura dos elementos químicos.
 
-Currently, two official plugins are available:
+A ideia principal é que interfaces sejam construídas com base em **blocos menores e reutilizáveis**, que se combinam em componentes maiores e mais complexos.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 📐 Estrutura do Atomic Design
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+A metodologia é dividida em 5 níveis:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 1. **Atoms (Átomos)**
+- Os blocos mais básicos da interface.
+- Exemplos: `Button`, `Input`, `Label`, `Checkbox`, `Icon`.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### 2. **Molecules (Moléculas)**
+- Combinações simples de átomos que formam uma unidade funcional.
+- Exemplos: Um campo de formulário (`Label + Input + ErrorMessage`), `SearchBar`.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 3. **Organisms (Organismos)**
+- Grupos de moléculas e/ou átomos que formam seções independentes da interface.
+- Exemplos: `Navbar`, `TodoList`, `Form`.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 4. **Templates**
+- Estruturas de layout compostas por múltiplos organismos.
+- Determinam o posicionamento dos elementos na página.
+- Exemplo: Página com `Header`, `Sidebar`, `MainContent`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 5. **Pages**
+- Instâncias reais de templates com dados específicos.
+- Representam a interface final que o usuário vê.
+- Exemplo: Página "Home" com lista de tarefas carregadas.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## ✅ Benefícios do Atomic Design
+
+- **Reutilização de componentes**;
+- **Facilidade de manutenção** e escalabilidade;
+- **Organização clara** da estrutura do projeto;
+- **Colaboração eficiente** entre design e desenvolvimento.
+
+---
