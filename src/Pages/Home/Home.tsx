@@ -1,12 +1,9 @@
-
-import { useMemo, useState } from 'react';
-import { Typography, ProgressBar, TextInput, Button } from '../../components/atom';
-import { TodoList } from '../../components/organisms';
-import { MainPageTemplate } from '../../components/template/MainPageTemplate';
-import { useTodos } from '../../context/Todo';
+import { Typography, ProgressBar, TextInput, Button } from "@/components/atom";
+import { TodoList } from "@/components/organisms";
+import { MainPageTemplate } from "@/components/template/MainPageTemplate";
+import { useTodos } from "@/context/Todo";
+import { useState, useMemo } from "react";
 import * as Styled from './Home.styled'
-
-
 export  function Home() {
   const { todos, addTodo } = useTodos();
   const [inputValue, setInputValue] = useState('');

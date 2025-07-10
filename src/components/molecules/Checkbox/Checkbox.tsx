@@ -1,6 +1,6 @@
-import { CheckboxInput, Typography } from '../../atom'
-import type { CheckboxInputProps } from '../../atom'
 
+
+import { CheckboxInput, Typography, type CheckboxInputProps } from '@/components/atom'
 import * as Styled from './Checkbox.styled'
 
 export interface CheckboxProps extends Omit<CheckboxInputProps, 'id'> {

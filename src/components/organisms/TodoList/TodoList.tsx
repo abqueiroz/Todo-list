@@ -1,8 +1,9 @@
-import { useTodos } from '../../../context/Todo';
-import { Checkbox, type CheckboxProps } from '../../molecules';
-import * as Styled from './TodoList.styled'
-import { Button, TextInput } from '../../atom';
+
 import { useState } from 'react';
+import * as Styled from './TodoList.styled'
+import { TextInput, Button } from '@/components/atom';
+import { useTodos } from '@/context/Todo';
+import { Checkbox, type CheckboxProps } from '@/components/molecules';
 
 export type Todo = {
     id: number;
