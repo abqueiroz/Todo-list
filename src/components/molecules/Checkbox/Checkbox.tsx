@@ -7,6 +7,17 @@ export interface CheckboxProps extends Omit<CheckboxInputProps, 'id'> {
     $label: string
     id: string
 }
+/**
+ * Checkbox component with a label.
+ * 
+ * Renders a styled checkbox input paired with a label that visually updates based on the checked state.
+ * The label text is shown with a line-through style when the checkbox is checked.
+ * 
+ * @param id - Unique identifier for the checkbox and label association.
+ * @param $label - Text displayed as the checkbox label.
+ * @param checked - Controls the checked state of the checkbox.
+ * @param [...] - Other props passed down to the underlying CheckboxInput, except 'id'.
+ */
 
 export function Checkbox(props: CheckboxProps) {
     const { $label, id, checked, ...rest } = props

@@ -10,6 +10,17 @@ export type Todo = {
     done: boolean;
 };
 
+/**
+ * Renders a list of todo items with interactive checkboxes, supporting editing and deletion.
+ * 
+ * Each todo item can be toggled as done/undone, edited inline, or removed.
+ * Editing a todo shows an input field with save and cancel buttons.
+ * 
+ * This component receives props that are passed down to each Checkbox item,
+ * excluding `$label`, `id`, and `onChange` which are managed internally.
+ * 
+ * @param [...] - Inherits all props from Checkbox, except '$label', 'id', and 'onChange'.
+ */
 export function TodoList(props: Omit<CheckboxProps, '$label' | 'id' | 'onChange'>) {
     const [editingId, setEditingId] = useState<number | null>(null);
     const [editValue, setEditValue] = useState('');
