@@ -36,7 +36,7 @@ export default function App() {
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
-        <Button type="submit">Add</Button>
+        <Button type="submit" disabled={!inputValue}>Add</Button>
       </Styled.Form>
       <TodoList />
     </MainPageTemplate>

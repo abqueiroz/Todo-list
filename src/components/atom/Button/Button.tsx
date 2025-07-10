@@ -16,7 +16,7 @@ export const Button = styled.button<ButtonProps>`
   font-weight: 600;
   border-radius: ${({ theme }) => theme.radii.base};
   cursor: pointer;
-  transition: background-color 0.4s ease;
+  transition: background-color 0.4s ease, opacity 0.4s ease;
 
   &:focus{
     outline:1px solid;
@@ -76,5 +76,6 @@ export const Button = styled.button<ButtonProps>`
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+    transition: opacity 0.5s ease
   }
 `;

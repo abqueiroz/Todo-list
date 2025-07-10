@@ -24,6 +24,12 @@ npm run dev
 
 ```
 
+## Proximos passos
+
+- Adicionar testes unitários com **vistest** e **React-testing-libary**;
+- Adicionar **storybook** para documentação e interação com componentes;
+- Adicionar novos componentes de maior atomicidade;
+
 # 🧪 Atomic Design
 
 **Atomic Design** é uma metodologia de design de interfaces proposta por Brad Frost, que organiza os componentes da interface de forma hierárquica e reutilizável, inspirada na estrutura dos elementos químicos.
