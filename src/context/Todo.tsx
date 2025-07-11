@@ -1,5 +1,5 @@
 
-import { createContext, useContext } from 'react';
+import { createContext } from 'react';
 import type { Todo } from '../components/organisms';
 
 type TodoContextType = {
@@ -11,4 +11,3 @@ type TodoContextType = {
 };
 
 export const TodoContext = createContext({} as TodoContextType);
-export const useTodos = () => useContext(TodoContext);
