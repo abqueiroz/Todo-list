@@ -1,8 +1,8 @@
 import * as Styled from './TodoList.styled'
 import { type CheckboxProps } from '@/components/molecules';
 import { useTodoList } from './useTodoList';
-import { TodoItem } from './components/TodoItem/TodoItem';
-import { TodoItemEdit } from './components/TodoEditItem/TodoEditItem';
+import { TodoItemEdit, TodoItem } from './components';
+
 
 export type Todo = {
     id: number;
@@ -45,7 +45,6 @@ export function TodoList(props: Omit<CheckboxProps, '$label' | 'id' | 'onChange'
                             {...props}
                         />
                     }
-
                 </Styled.TodoItem>
             ))}
         </Styled.TodoListContainer>)
