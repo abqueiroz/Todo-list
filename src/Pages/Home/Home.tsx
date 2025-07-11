@@ -26,7 +26,7 @@ export  function Home() {
     <MainPageTemplate>
       <Typography $size="heading" $color="secondary">Todo List</Typography>
       <Styled.ProgressbarContainer>
-        <ProgressBar value={progress} />
+        <ProgressBar value={progress} id="progress-todo-list" />
       </Styled.ProgressbarContainer>
       <Styled.Form onSubmit={handleSubmit}>
         <TextInput

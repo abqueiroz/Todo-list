@@ -1,9 +1,8 @@
-
-import { useState } from 'react';
 import * as Styled from './TodoList.styled'
-import { TextInput, Button } from '@/components/atom';
-import { Checkbox, type CheckboxProps } from '@/components/molecules';
-import { useTodos } from '@/hooks/useTodos';
+import { type CheckboxProps } from '@/components/molecules';
+import { useTodoList } from './useTodoList';
+import { TodoItem } from './components/TodoItem/TodoItem';
+import { TodoItemEdit } from './components/TodoEditItem/TodoEditItem';
 
 export type Todo = {
     id: number;
@@ -23,68 +22,29 @@ export type Todo = {
  * @param [...] - Inherits all props from Checkbox, except '$label', 'id', and 'onChange'.
  */
 export function TodoList(props: Omit<CheckboxProps, '$label' | 'id' | 'onChange'>) {
-    const [editingId, setEditingId] = useState<number | null>(null);
-    const [editValue, setEditValue] = useState('');
-
-    const { todos, toggleTodo, deleteTodo, editTodo } = useTodos();
-
-    const startEditing = (id: number, currentText: string) => {
-        setEditingId(id);
-        setEditValue(currentText);
-    };
-
-    const saveEdit = () => {
-        if (editingId && editValue.trim()) {
-            editTodo(editingId, editValue.trim());
-        }
-        setEditingId(null);
-        setEditValue('');
-    };
-
+    const { todos, deleteTodo, editValue,
+        editingId, saveEdit, startEditing,
+        toggleTodo, setEditingId, setEditValue } = useTodoList()
     return (
         <Styled.TodoListContainer>
             {todos.map((todo) => (
                 <Styled.TodoItem key={todo.id}>
                     {editingId === todo.id ?
-                        <>
-                            <TextInput
-                                value={editValue}
-                                placeholder={todo.text}
-                                onChange={(e) => setEditValue(e.target.value)}
-                                onKeyDown={(e) => {
-                                    if (e.key === 'Enter') saveEdit();
-                                    if (e.key === 'Escape') setEditingId(null);
-                                }}
-                                autoFocus
-                            />
-                            <Styled.ButtonsContainer>
-                                <Button $size='small' onClick={() => saveEdit()}>
-                                    Save
-                                </Button>
-                                <Button $size='small' $variant='secondary' onClick={() => setEditingId(null)}>
-                                    Cancel
-                                </Button>
-                            </Styled.ButtonsContainer>
-
-                        </> :
-                        <>
-                            <Checkbox
-                                id={todo.id.toString()}
-                                $label={todo.text}
-                                defaultChecked={todo.done}
-                                checked={todo.done}
-                                onCheckedChange={() => { toggleTodo(todo.id) }}
-                                {...props}
-                            />
-                            <Styled.ButtonsContainer>
-                                <Button $size='small' $variant='tertiary' onClick={() => startEditing(todo.id, todo.text)}>
-                                    Edit
-                                </Button>
-                                <Button $size='small' $variant='alert' onClick={() => deleteTodo(todo.id)}>
-                                    Delete
-                                </Button>
-                            </Styled.ButtonsContainer>
-                        </>}
+                        <TodoItemEdit
+                            value={editValue}
+                            onChange={setEditValue}
+                            onSave={saveEdit}
+                            onCancel={() => setEditingId(null)}
+                            placeholder={todo.text}
+                        /> :
+                        <TodoItem
+                            todo={todo}
+                            onEdit={() => startEditing(todo.id, todo.text)}
+                            onDelete={() => deleteTodo(todo.id)}
+                            onStateChange={() => toggleTodo(todo.id)}
+                            {...props}
+                        />
+                    }
 
                 </Styled.TodoItem>
             ))}
