@@ -26,7 +26,6 @@ npm run dev
 
 ## Proximos passos
 
-- Adicionar testes unitários com **vistest** e **React-testing-libary**;
 - Adicionar **storybook** para documentação e interação com componentes;
 - Adicionar novos componentes de maior atomicidade;
 
